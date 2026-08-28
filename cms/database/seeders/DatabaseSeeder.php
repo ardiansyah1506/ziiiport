@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
         );
 
         // Project initial records mapping categories and tech stacks
-        $this->call([
-            ProjectSeeder::class,
-        ]);
+        // $this->call([
+        //     ProjectSeeder::class,
+        // ]);
     }
 }
