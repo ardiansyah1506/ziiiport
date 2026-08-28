@@ -3,7 +3,8 @@ import ProjectsClient from "@/components/ProjectsClient";
 export default async function Projects() {
   let initialProjects = [];
   try {
-    const res = await fetch("http://127.0.0.1:8000/api/projects", { cache: "no-store" });
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000/api";
+    const res = await fetch(`${apiUrl}/projects`, { cache: "no-store" });
     if (res.ok) {
         initialProjects = await res.json();
     } else {
