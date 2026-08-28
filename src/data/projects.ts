@@ -1,0 +1,113 @@
+export const projectsData = [
+  {
+    title: "Nexus.AI",
+    slug: "nexus-ai",
+    category: "Automation/AI",
+    categoryRaw: "ai",
+    desc: "A distributed intelligence platform for real-time market analysis. Engineered with a microservices architecture to handle high-throughput data streams and execute predictive models.",
+    details: "Nexus.AI is a highly concurrent data processing engine built specifically to scan, process, and analyze global financial market movements within sub-second latencies. It integrates machine learning anomaly detection to alert traders of potential market shifts.",
+    tags: ["[React]", "[Go]", "[TensorFlow]", "[PostgreSQL]"],
+    role: "Lead Architect",
+    timeline: "2023.11",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDOYmp0O3Kpxyom444q_i8UaHSrR4IELwkDPwlM8EH0x6LQv_jZv-nc2JoaDOqyLk6napuwsYNtyDt8TStyN8AeiCKlhP-FQj3z0EdvOsYJgE_UN3MxkCZ_NzS67FnE5qLwSoq6zbARLr8D2SzvDOw2X83KVuWbJM8FAZhbevyKC4RyHMFJNKEeegLbDJPSeL6s8TVVzJyY5zewyOyn7bP6mhI31x3XOCPDwBicqUzlPpbLIYDLyqvs7g",
+    liveDemo: "https://nexus-ai.deployment.example",
+    github: "https://github.com/fauzi-a/nexus-ai"
+  },
+  {
+    title: "OmniRoute",
+    slug: "omniroute",
+    category: "Web App",
+    categoryRaw: "web ai",
+    desc: "High-performance API gateway and routing engine handling automated load balancing and intelligent caching.",
+    details: "Built to replace legacy Nginx proxies for dynamic routing in multi-tenant environments. OmniRoute uses a custom algorithm to intelligently route requests to the closest geographic server node, managing up to 10k requests per second per container.",
+    tags: ["[Node.js]", "[Redis]", "[Docker]", "[Nginx]"],
+    role: "Backend Engineer",
+    timeline: "2023.08",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC8vfIiAVe3SK1udonX3yX4ZJSlRcavZztA5pPVX9jWV1W7EGETOY9qTuAQ6NZZb4JtcZOtbUeVatnd1GkrVWQX-Ttlud8n03cR6WX8G8k8hJOuV-OslVCFzd4fzGa2GbAAFfy1HNNri8gEUvKewiiJBIm8x8J9XA6YrRcgpKJ2_KbuDHT2m4DwRej_meCkovxHJbyZfW-AnIEmBy0zftoEEuNDxtyuD6xwZ9LgSO8ikvmk28NGQKOK-g",
+    github: "https://github.com/fauzi-a/omniroute"
+  },
+  {
+    title: "Aether UI",
+    slug: "aether-ui",
+    category: "Web App",
+    categoryRaw: "web",
+    desc: "Component library built for rapid internal tool development. Strict adherence to utilitarian design principles.",
+    details: "A comprehensive design system encompassing color tokens, typography scales, and 50+ modular components that interface perfectly with Vue ecosystem. Optimized for Web Content Accessibility Guidelines (WCAG) 2.1 AA.",
+    tags: ["[Vue.js]", "[Tailwind]", "[Storybook]"],
+    role: "Frontend Developer",
+    timeline: "2023.02",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAMsZkHw3q5fR4d4G1wJdF77C8o13l4lTXX6_M27uI1N2Y72Q28Zz53n1R7xV7T8j4fB44DndD1G7R6e_2J8S6K3O2A4f9yKq31oY4U5mX80E3O1m6P4S_Y7uI7D1F7v_S1zG4D_aE2G6C0R5uR2mB9W7B4oA1yK8D5P_g_B9Q3I5J6R7T1vS9v3o_Z5q_xS7x_b6n25t0L7p1m1y_"
+  },
+  {
+    title: "SyncFlow",
+    slug: "syncflow",
+    category: "Automation/AI",
+    categoryRaw: "web ai",
+    desc: "Automated inventory synchronization system connecting disparate ERP databases into a single unified dashboard.",
+    details: "Developed as a middle-ware middleware, SyncFlow automates cron cron-tasks and hooks into various legacy ERPs through highly resilient webhook systems. Reduced manual reconciliation time by 80%.",
+    tags: ["[Next.js]", "[Python]", "[Cron]", "[GraphQL]"],
+    role: "Full Stack Engineer",
+    timeline: "2022.11",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBJIpr7UiXHPsdf8Uyx18pb_IA_5hFo2rAYRZflQ7LBoE4GGOYIcQR4Uu1i4Ig-j2q_IaOD4ze7XWP8Z5SK4ysdq89_JVgQ4pHFzDfDxq8Y6fKUn22cKmrnwhqSUrUaNg8Ktlf4weBbpF_LZRZqfBKeMoySTz97L8uG1qPh145oHLN2wVCopSJ19nvdsB-eVVhVVGibSW8khMx0omXJmBEWQzcA39HxUYBPAHeX81DPau4jXKgrBZyQzw"
+  },
+  {
+    title: "Fluid Dynamics",
+    slug: "fluid-dynamics",
+    category: "Web App",
+    categoryRaw: "web",
+    desc: "Real-time GPU fluid simulation running in the browser. Exploring computational shaders and performance limits.",
+    details: "An experimental exploration of WebGL fragment shaders in modern browsers. Handles 1M+ particles rendering real-time Navier-Stokes equations natively at solid 60 FPS across desktop setups.",
+    tags: ["[Three.js]", "[GLSL]", "[WebGL]"],
+    role: "Creative Developer",
+    timeline: "2022.06",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDxC3qP2q4e-_d9I87N5P9t8o8c5e6Q-L-0PZ22T_H9T3iQk_k8qF8fM-k4n_xH6nN3H7b-V4zWz_X4-K6yS4gU5S2x5xL8hZ5T3M5c6P_r5o-S7_I6Z-_2aC3K2yT3X3mZ9Q4uI_m5aZ2z-_E9sV5b-W6lD8T2yN7M7L9m7o-"
+  },
+  {
+    title: "Cognitive Agent UI",
+    slug: "cognitive-agent-ui",
+    category: "Automation/AI",
+    categoryRaw: "ai web",
+    desc: "A specialized interface for orchestrating multi-agent AI systems. Allows users to visualize reasoning chains in real-time.",
+    details: "Crafted specifically to handle token-streaming and real-time inference trees from complex Python LLM pipelines. Engineered the frontend via WebSockets to support persistent agentic loop visualizations.",
+    tags: ["[React]", "[WebSockets]", "[Python]", "[LLM]"],
+    role: "Frontend Engineer",
+    timeline: "2024.01",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC19snssACECLRhl5_1JLfR39_BGpphzitvwxAGT6g_WLFbSloaKLpDSWBroDInnwF1h05HmsoxZqycEU587PZjW1L7IMGIh3MYdIJ-V47aBlmAzNhkzXjM2x5svB533Ddmk0e65hj3Fo9VbtYN33X1FXcRhEOT4gelONJZn--xhDQ0gGfsQLx60q6FL8YEKFVAKjEdBG4sxCJZ-goJyY403rWxxQ3D2iGSoBIDIH7OXfd4DRXHuPNBbA"
+  },
+  {
+    title: "Mobile POS System",
+    slug: "mobile-pos-system",
+    category: "Mobile App",
+    categoryRaw: "mobile",
+    desc: "Offline-first Flutter application allowing retail operators to perform secure transactions without active internet connectivity.",
+    details: "A comprehensive point-of-sales mobile app for Android and iOS using Flutter. Incorporates SQLite for reliable offline buffering and background sync conflict resolutions.",
+    tags: ["[Flutter]", "[SQLite]", "[Dart]"],
+    role: "Mobile Developer",
+    timeline: "2023.05",
+    image: ""
+  },
+  {
+    title: "Vault Secure",
+    slug: "vault-secure",
+    category: "Web App",
+    categoryRaw: "web",
+    desc: "Zero-knowledge encryption password manager and data store for enterprise clients.",
+    details: "Implementing advanced cryptographic implementations in the browser using the Web Crypto API. Server only sees undecipherable blobs.",
+    tags: ["[Web Crypto]", "[Next.js]", "[Zustand]"],
+    role: "Security Engineer",
+    timeline: "2022.09",
+    image: ""
+  },
+  {
+    title: "Telemetry Tracker",
+    slug: "telemetry-tracker",
+    category: "Web App",
+    categoryRaw: "web",
+    desc: "Lightweight tracking script and visualization dashboard for tracking client-side rendering bottlenecks.",
+    details: "Allows pinpoint accuracy in finding performance bottlenecks in React and Angular apps by analyzing interaction to next paint (INP) natively.",
+    tags: ["[Vanilla JS]", "[D3.js]", "[Vite]"],
+    role: "Performance Engineer",
+    timeline: "2021.11",
+    image: ""
+  }
+];

@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "primary-fixed-dim": "#00e639",
+                "secondary": "#c8c6c7",
+                "surface-container-low": "#1a1c1d",
+                "primary-fixed": "#72ff70",
+                "on-surface-variant": "#b9ccb2",
+                "surface-tint": "#00e639",
+                "surface-container-lowest": "#0c0e0f",
+                "on-primary": "#003907",
+                "surface-container-highest": "#333536",
+                "primary-container": "#00ff41",
+                "on-secondary-fixed": "#1b1b1c",
+                "tertiary-fixed": "#ffdcbd",
+                "on-background": "#e2e2e3",
+                "surface-container": "#1e2021",
+                "on-tertiary-container": "#7a5b3c",
+                "on-tertiary": "#442b10",
+                "on-secondary": "#303031",
+                "error-container": "#93000a",
+                "on-primary-fixed-variant": "#00530e",
+                "tertiary": "#fff8f4",
+                "secondary-fixed-dim": "#c8c6c7",
+                "on-secondary-fixed-variant": "#474647",
+                "on-tertiary-fixed": "#2c1701",
+                "primary": "#ebffe2",
+                "outline-variant": "#3b4b37",
+                "on-error-container": "#ffdad6",
+                "surface-bright": "#38393a",
+                "error": "#ffb4ab",
+                "on-secondary-container": "#bab8b9",
+                "inverse-surface": "#e2e2e3",
+                "on-primary-container": "#007117",
+                "background": "#121415",
+                "inverse-on-surface": "#2f3132",
+                "tertiary-container": "#ffd5ae",
+                "surface": "#121415",
+                "outline": "#84967e",
+                "surface-container-high": "#282a2b",
+                "inverse-primary": "#006e16",
+                "on-error": "#690005",
+                "on-surface": "#e2e2e3",
+                "surface-dim": "#121415",
+                "on-primary-fixed": "#002203",
+                "surface-variant": "#333536",
+                "tertiary-fixed-dim": "#e7bf99",
+                "secondary-container": "#49494a",
+                "secondary-fixed": "#e5e2e3",
+                "on-tertiary-fixed-variant": "#5d4124"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "section-gap": "120px",
+                "stack-sm": "8px",
+                "stack-md": "16px",
+                "margin-safe": "32px",
+                "gutter": "24px",
+                "unit": "4px"
+        },
+        "fontFamily": {
+                "code-snippet": [
+                        "JetBrains Mono"
+                ],
+                "body": [
+                        "Geist"
+                ],
+                "headline-lg-mobile": [
+                        "Geist"
+                ],
+                "headline-lg": [
+                        "Geist"
+                ],
+                "metadata": [
+                        "JetBrains Mono"
+                ],
+                "headline-md": [
+                        "Geist"
+                ],
+                "display": [
+                        "Geist"
+                ]
+        },
+        "fontSize": {
+                "code-snippet": [
+                        "14px",
+                        {
+                                "lineHeight": "1.7",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "metadata": [
+                        "12px",
+                        {
+                                "lineHeight": "1.5",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display": [
+                        "72px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+}
+    }
+  }
+</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"></head><body class="bg-background font-body text-on-background dark"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant"><div class="h-16 max-w-7xl mx-auto px-margin-safe flex items-center justify-between"><div class="flex items-center gap-unit"><span class="font-metadata text-metadata text-primary">[STUDIO-v1.0]</span><span class="font-headline-md text-headline-md tracking-tight text-on-surface">Fauzi Ardiansyah</span></div><nav class="hidden md:flex items-center gap-gutter" data-active-classes="text-primary border-b border-primary"><a class="font-metadata text-metadata text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-unit uppercase" data-path="home" href="{{DATA:SCREEN:SCREEN_8}}"><span class="opacity-50">01/</span> Home</a><a aria-current="page" class="font-metadata transition-colors flex items-center gap-unit uppercase text-primary border-b border-primary" data-path="projects" href="{{DATA:SCREEN:SCREEN_14}}"><span class="opacity-50">02/</span> Projects</a><a class="font-metadata text-metadata text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-unit uppercase" data-path="about" href="{{DATA:SCREEN:SCREEN_3}}"><span class="opacity-50">03/</span> About</a><a class="font-metadata text-metadata text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-unit uppercase" data-path="services" href="{{DATA:SCREEN:SCREEN_17}}"><span class="opacity-50">04/</span> Services</a><a class="font-metadata text-metadata text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-unit uppercase" data-path="contact" href="{{DATA:SCREEN:SCREEN_18}}"><span class="opacity-50">05/</span> Contact</a></nav><div class="flex items-center gap-stack-md"><button class="w-8 h-8 flex items-center justify-center hover:bg-surface-container rounded-full text-on-surface-variant hover:text-on-surface transition-all" onclick="document.body.classList.toggle('dark')"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full px-margin-safe max-w-7xl mx-auto py-gutter gap-stack-md">
+<section class="flex flex-col gap-stack-md pb-gutter border-b border-outline-variant">
+<h1 class="font-display text-display text-on-surface tracking-tight">Proyek <span class="text-primary">Terpilih</span></h1>
+<p class="font-body text-body text-on-surface-variant max-w-2xl">
+        A chronological index of developed systems, interfaces, and digital infrastructure. 
+        Filter by operational domain or view the complete manifest.
+      </p>
+<nav class="flex flex-wrap gap-stack-sm mt-stack-sm" id="project-filters">
+<button class="font-metadata text-metadata px-4 py-2 rounded-full border border-primary bg-primary text-on-primary transition-colors uppercase" data-filter="all">Semua</button>
+<button class="font-metadata text-metadata px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-colors uppercase" data-filter="web">Web App</button>
+<button class="font-metadata text-metadata px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-colors uppercase" data-filter="mobile">Mobile</button>
+<button class="font-metadata text-metadata px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-colors uppercase" data-filter="ai">Automation/AI</button>
+</nav>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter pt-gutter" id="project-grid">
+<!-- Project Card 1 -->
+<article class="group flex flex-col gap-stack-sm bg-surface-container-lowest border border-outline-variant overflow-hidden hover:border-primary transition-colors cursor-pointer" data-category="ai">
+<div class="relative w-full aspect-video border-b border-outline-variant overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="A dark mode interface of a complex AI analytics dashboard, showing node graphs, data streams, and dark green accent colors in a technical, blueprint-like style. High contrast, sharp edges." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOYmp0O3Kpxyom444q_i8UaHSrR4IELwkDPwlM8EH0x6LQv_jZv-nc2JoaDOqyLk6napuwsYNtyDt8TStyN8AeiCKlhP-FQj3z0EdvOsYJgE_UN3MxkCZ_NzS67FnE5qLwSoq6zbARLr8D2SzvDOw2X83KVuWbJM8FAZhbevyKC4RyHMFJNKEeegLbDJPSeL6s8TVVzJyY5zewyOyn7bP6mhI31x3XOCPDwBicqUzlPpbLIYDLyqvs7g')"></div>
+</div>
+<div class="flex flex-col flex-1 p-stack-md gap-stack-sm">
+<span class="font-metadata text-metadata text-on-surface-variant uppercase">Automation/AI</span>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Nexus.AI</h3>
+<p class="font-body text-body text-on-surface-variant line-clamp-3">
+          A distributed intelligence platform for real-time market analysis. Engineered with a microservices architecture to handle high-throughput data streams and execute predictive models.
+        </p>
+<div class="flex flex-wrap gap-unit mt-auto pt-stack-sm border-t border-outline-variant">
+<span class="font-code-snippet text-code-snippet text-on-surface px-unit border border-outline-variant">[React]</span>
+<span class="font-code-snippet text-code-snippet text-on-surface px-unit border border-outline-variant">[Go]</span>
+<span class="font-code-snippet text-code-snippet text-on-surface px-unit border border-outline-variant">[TensorFlow]</span>
+</div>
+</div>
+</article>
+<!-- Project Card 2 -->
+<article class="group flex flex-col gap-stack-sm bg-surface-container-lowest border border-outline-variant overflow-hidden hover:border-primary transition-colors cursor-pointer" data-category="web ai">
+<div class="relative w-full aspect-video border-b border-outline-variant overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" data-alt="Abstract representation of API routing, showing glowing green data packets moving through a dark, structured grid network. Cybernetic, precise, engineering focused." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8vfIiAVe3SK1udonX3yX4ZJSlRcavZztA5pPVX9jWV1W7EGETOY9qTuAQ6NZZb4JtcZOtbUeVatnd1GkrVWQX-Ttlud8n03cR6WX8G8k8hJOuV-OslVCFzd4fzGa2GbAAFfy1HNNri8gEUvKewiiJBIm8x8J9XA6YrRcgpKJ2_KbuDHT2m4DwRej_meCkovxHJbyZfW-AnIEmBy0zftoEEuNDxtyuD6xwZ9LgSO8ikvmk28NGQKOK-g')"></div>
+</div>
+<div class="flex flex-col flex-1 p-stack-md gap-stack-sm">
+<span class="font-metadata text-metadata text-on-surface-variant uppercase">Web App</span>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">OmniRoute</h3>
+<p class="font-body text-body text-on-surface-variant line-clamp-3">
+          High-performance API gateway and routing engine handling automated load balancing and intelligent caching.
+        </p>
+<div class="flex flex-wrap gap-unit mt-auto pt-stack-sm border-t border-outline-variant">
+<span class="font-code-snippet text-code-snippet text-on-surface px-unit border border-outline-variant">[Node.js]</span>
+<span class="font-code-snippet text-code-snippet text-on-surface px-unit border border-outline-variant">[Redis]</span>
+</div>
+</div>
+</article>
+<!-- Project Card 3 -->
+<article class="group flex flex-col gap-stack-sm bg-surface-container-lowest border border-outline-variant overflow-hidden hover:border-primary transition-colors cursor-pointer" data-category="web">
+<div class="relative w-full aspect-video border-b border-outline-variant overflow-hidden bg-surface-container-highest">
+<div class="absolute inset-0 bg-cover bg-center opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"></div>
+</div>
+<div class="flex flex-col flex-1 p-stack-md gap-stack-sm">
+<span class="font-metadata text-metadata text-on-surface-variant uppercase">Web App</span>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Aether UI</h3>
+<p class="font-body text-body text-on-surface-variant line-clamp-3">
+          Component library built for rapid internal tool development. Strict adherence to utilitarian design principles.
+        </p>
+<div class="flex flex-wrap gap-unit mt-auto pt-stack-sm border-t border-outline-variant">
+<span class="font-code-snippet text-code-snippet text-on-surface px-unit border border-outline-variant">[Vue.js]</span>
+<span class="font-code-snippet text-code-snippet text-on-surface px-unit border border-outline-variant">[Tailwind]</span>
+</div>
+</div>
+</article>
+<!-- Project Card 4 -->
+<article class="group flex flex-col gap-stack-sm bg-surface-container-lowest border border-outline-variant overflow-hidden hover:border-primary transition-colors cursor-pointer" data-category="web ai">
+<div class="relative w-full aspect-video border-b border-outline-variant overflow-hidden bg-surface-container-highest">
+<div class="absolute inset-0 bg-cover bg-center opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"></div>
+</div>
+<div class="flex flex-col flex-1 p-stack-md gap-stack-sm">
+<span class="font-metadata text-metadata text-on-surface-variant uppercase">Automation/AI</span>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">SyncFlow</h3>
+<p class="font-body text-body text-on-surface-variant line-clamp-3">
+          Automated inventory synchronization system connecting disparate ERP databases into a single unified dashboard.
+        </p>
+<div class="flex flex-wrap gap-unit mt-auto pt-stack-sm border-t border-outline-variant">
+<span class="font-code-snippet text-code-snippet text-on-surface px-unit border border-outline-variant">[Next.js]</span>
+<span class="font-code-snippet text-code-snippet text-on-surface px-unit border border-outline-variant">[Python]</span>
+</div>
+</div>
+</article>
+<!-- Project Card 5 -->
+<article class="group flex flex-col gap-stack-sm bg-surface-container-lowest border border-outline-variant overflow-hidden hover:border-primary transition-colors cursor-pointer" data-category="web">
+<div class="relative w-full aspect-video border-b border-outline-variant overflow-hidden bg-surface-container-highest">
+<div class="absolute inset-0 bg-cover bg-center opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"></div>
+</div>
+<div class="flex flex-col flex-1 p-stack-md gap-stack-sm">
+<span class="font-metadata text-metadata text-on-surface-variant uppercase">Web App</span>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Fluid Dynamics</h3>
+<p class="font-body text-body text-on-surface-variant line-clamp-3">
+          Real-time GPU fluid simulation running in the browser. Exploring computational shaders and performance limits.
+        </p>
+<div class="flex flex-wrap gap-unit mt-auto pt-stack-sm border-t border-outline-variant">
+<span class="font-code-snippet text-code-snippet text-on-surface px-unit border border-outline-variant">[Three.js]</span>
+<span class="font-code-snippet text-code-snippet text-on-surface px-unit border border-outline-variant">[GLSL]</span>
+</div>
+</div>
+</article>
+</section>
+<div class="flex justify-center pt-gutter">
+<button class="px-6 py-3 border border-outline-variant text-on-surface-variant hover:border-primary font-metadata text-metadata uppercase tracking-wider hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-unit">
+      Muat Lebih Banyak
+      <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</button>
+</div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filters = document.querySelectorAll('#project-filters button');
+    const projects = document.querySelectorAll('#project-grid article');
+
+    filters.forEach(filter => {
+      filter.addEventListener('click', () => {
+        // Reset active states
+        filters.forEach(btn => {
+          btn.classList.remove('border-primary', 'text-primary', 'bg-primary', 'text-on-primary');
+          btn.classList.add('border-outline-variant', 'text-on-surface-variant');
+        });
+
+        // Set active state
+        if (filter.dataset.filter === 'all') {
+             filter.classList.remove('border-outline-variant', 'text-on-surface-variant');
+             filter.classList.add('border-primary', 'bg-primary', 'text-on-primary');
+        } else {
+             filter.classList.remove('border-outline-variant', 'text-on-surface-variant');
+             filter.classList.add('border-primary', 'text-primary');
+        }
+
+
+        const target = filter.dataset.filter;
+
+        projects.forEach(project => {
+          if (target === 'all' || project.dataset.category.includes(target)) {
+            project.style.display = 'flex';
+          } else {
+            project.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script></main><footer class="w-full border-t border-outline-variant bg-surface-container-lowest py-gutter"><div class="max-w-7xl mx-auto px-margin-safe flex flex-col md:flex-row justify-between items-center gap-stack-md"><div class="flex items-center gap-stack-sm font-metadata text-metadata text-on-surface-variant uppercase"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> System Operational // 0x00FF</div><div class="font-metadata text-metadata text-on-surface-variant">© 2024 Fauzi Ardiansyah. Engineered in Indonesia.</div><div class="flex gap-stack-md text-on-surface-variant"><span class="material-symbols-outlined text-[18px] cursor-pointer hover:text-primary transition-colors">terminal</span><span class="material-symbols-outlined text-[18px] cursor-pointer hover:text-primary transition-colors">data_object</span></div></div></footer>
+
+</body></html>

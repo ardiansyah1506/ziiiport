@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* LIGHT MODE (Base) */
+  --color-background: #F8F9FA;
+  --color-on-background: #121415;
+  
+  --color-surface: #FFFFFF;
+  --color-on-surface: #121415;
+  
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-container: #EEEEEF;
+  --color-surface-container-highest: #E2E2E3;
+  
+  --color-primary: #00FF41;
+  --color-on-primary: #121415;
+  
+  --color-secondary: #38393A;
+  --color-on-secondary: #FFFFFF;
+
+  --color-outline: #38393A;
+  --color-outline-variant: #D1D5DB;
+  
+  --color-surface-variant: #F3F4F6;
+  --color-on-surface-variant: #38393A;
+  
+  /* Shared Tokens */
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  --spacing-stack-md: 16px;
+  --spacing-unit: 4px;
+  --spacing-stack-sm: 8px;
+  --spacing-gutter: 24px;
+  --spacing-margin-safe: 32px;
+  --spacing-section-gap: 120px;
+
+  --font-headline-lg-mobile: Geist, sans-serif;
+  --font-display: Geist, sans-serif;
+  --font-headline-md: Geist, sans-serif;
+  --font-code-snippet: "JetBrains Mono", monospace;
+  --font-body: Geist, sans-serif;
+  --font-metadata: "JetBrains Mono", monospace;
+  --font-headline-lg: Geist, sans-serif;
+}
+
+@utility text-headline-lg-mobile { font-size: 32px; line-height: 1.2; font-weight: 600; }
+@utility text-display { font-size: 72px; line-height: 1.1; letter-spacing: -0.04em; font-weight: 700; }
+@utility text-headline-md { font-size: 24px; line-height: 1.4; font-weight: 600; }
+@utility text-code-snippet { font-size: 14px; line-height: 1.7; font-weight: 400; }
+@utility text-body { font-size: 16px; line-height: 1.6; font-weight: 400; }
+@utility text-metadata { font-size: 12px; line-height: 1.5; letter-spacing: 0.05em; font-weight: 500; }
+@utility text-headline-lg { font-size: 48px; line-height: 1.2; letter-spacing: -0.02em; font-weight: 600; }
+
+@layer base {
+  .dark {
+    /* DARK MODE */
+    --color-background: #121415;
+    --color-on-background: #E2E2E3;
+    
+    --color-surface: #121415;
+    --color-on-surface: #E2E2E3;
+    
+    --color-surface-container-lowest: #0c0e0f;
+    --color-surface-container: #1e2021;
+    --color-surface-container-highest: #333536;
+    
+    --color-primary: #00FF41;
+    --color-on-primary: #121415;
+    
+    --color-secondary: #c8c6c7;
+    --color-on-secondary: #121415;
+
+    --color-outline: #84967e;
+    --color-outline-variant: #3b4b37;
+    
+    --color-surface-variant: #333536;
+    --color-on-surface-variant: #b9ccb2;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
