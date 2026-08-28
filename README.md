@@ -8,7 +8,7 @@ This project is a modern, enterprise-grade full-stack digital portfolio. It feat
 
 The application utilizes a **Decoupled (Headless) Architecture**:
 - **Frontend (Headless Next.js)**: Responsible exclusively for rendering the UI, maximizing SEO capabilities via Server-Side Rendering (SSR), and orchestrating micro-interactions using Framer Motion.
-- **Backend (Vanilla Laravel API + CMS)**: Stores project capabilities natively via SQLite, exposes simple JSON REST APIs for the Next.js Client to consume, and manages database modifications securely via a **100% Custom Native Blade + Tailwind CDN Admin Dashboard**. 
+- **Backend (Vanilla Laravel API + CMS)**: Stores project capabilities natively via MySQL, exposes simple JSON REST APIs for the Next.js Client to consume, and manages database modifications securely via a **100% Custom Native Blade + Tailwind CDN Admin Dashboard**. 
 
 *Note: The backend administrative interface intentionally bypasses eco-systems like Filament, Livewire, or Laravel Breeze to remain as robust, frictionless, and bloat-free as possible.*
 
@@ -23,8 +23,7 @@ portfolio/
 │   ├── database/migrations/     # Database Schema Architectures
 │   ├── database/seeders/        # Bootstraps baseline data + Default Admin credentials
 │   ├── routes/web.php           # Admin panel secure routing mapping
-│   ├── routes/api.php           # Unprotected JSON APIs mapped mapped exclusively for frontend
-│   └── database.sqlite          # SQLite Zero-Config Database
+│   └── routes/api.php           # Unprotected JSON APIs mapped mapped exclusively for frontend
 │
 ├── src/                         # NEXT.JS FRONTEND DIRECTORY
 │   ├── app/                     # App Next.js 15 Router (Pages & Layouts)
@@ -50,7 +49,7 @@ portfolio/
 ### Backend
 - **Framework**: Laravel 11
 - **Language**: PHP 8.2+
-- **Database**: SQLite
+- **Database**: MySQL
 - **Interface**: Custom Blade Views orchestrated natively utilizing Tailwind CDN.
 - *(Zero NPM footprint required for the backend repository!).*
 
