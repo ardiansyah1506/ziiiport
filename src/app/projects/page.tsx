@@ -1,5 +1,7 @@
 import ProjectsClient from "@/components/ProjectsClient";
 
+export const dynamic = "force-dynamic";
+
 export default async function Projects() {
   let initialProjects = [];
   try {
