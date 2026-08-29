@@ -26,4 +26,12 @@ class Project extends Model
         'tech' => 'array',
         'categories' => 'array',
     ];
+
+    public function getImageAttribute($value)
+    {
+        if ($value && !\Illuminate\Support\Str::startsWith($value, 'http')) {
+            return asset($value);
+        }
+        return $value;
+    }
 }
