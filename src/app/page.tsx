@@ -278,14 +278,41 @@ export default function Home() {
               Currently accepting new projects for Q3. Let&apos;s discuss your technical requirements and architect a robust solution.
             </p>
           </div>
-          <div className="relative z-10 flex-shrink-0 w-full md:w-auto flex justify-center mt-stack-md md:mt-0">
-            <Link 
-              href="/contact" 
-              className="inline-flex items-center justify-center bg-[#00ff41] text-[#121415] font-metadata text-metadata uppercase px-8 py-4 rounded-none hover:bg-[#00e639] transition-colors gap-stack-sm border border-transparent w-full md:w-auto"
+          <div className="relative z-10 flex-shrink-0 w-full md:w-[350px] flex flex-col gap-4 mt-stack-md md:mt-0">
+            <a 
+              href="mailto:ardiansyah1506@gmail.com" 
+              className="inline-flex items-center justify-between text-on-surface hover:text-on-primary border border-outline-variant hover:border-[#00ff41] hover:bg-[#00ff41] bg-surface-container-lowest px-6 py-4 uppercase font-metadata text-metadata transition-all group"
             >
-              Initialize Contact
-              <span className="material-symbols-outlined text-[18px]">send</span>
-            </Link>
+              <div className="flex items-center gap-3 group-hover:text-[#121415]">
+                 <span className="material-symbols-outlined text-[20px]">mail</span>
+                 Email Me
+              </div>
+              <span className="material-symbols-outlined text-[16px] group-hover:text-[#121415]">arrow_outward</span>
+            </a>
+            
+            <a 
+              href="https://github.com/ardiansyah1506" 
+              target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-between text-on-surface hover:text-[#00ff41] border border-outline-variant hover:border-[#00ff41] bg-surface-container-lowest px-6 py-4 uppercase font-metadata text-metadata transition-all"
+            >
+              <div className="flex items-center gap-3">
+                 <span className="material-symbols-outlined text-[20px]">code</span>
+                 GitHub
+              </div>
+              <span className="material-symbols-outlined text-[16px]">arrow_outward</span>
+            </a>
+
+            <a 
+              href="https://linkedin.com/in/fauziardiansyah" 
+              target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-between text-on-surface hover:text-[#00ff41] border border-outline-variant hover:border-[#00ff41] bg-surface-container-lowest px-6 py-4 uppercase font-metadata text-metadata transition-all"
+            >
+              <div className="flex items-center gap-3">
+                 <span className="material-symbols-outlined text-[20px]">work</span>
+                 LinkedIn
+              </div>
+              <span className="material-symbols-outlined text-[16px]">arrow_outward</span>
+            </a>
           </div>
         </div>
       </motion.section>

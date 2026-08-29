@@ -7,8 +7,8 @@ export function Footer() {
         </div>
         <div className="font-metadata text-metadata text-on-surface-variant">© 2024 Fauzi Ardiansyah. Engineered in Indonesia.</div>
         <div className="flex gap-stack-md text-on-surface-variant">
-          <span className="material-symbols-outlined text-[18px] cursor-pointer hover:text-[#00ff41] transition-colors">terminal</span>
-          <span className="material-symbols-outlined text-[18px] cursor-pointer hover:text-[#00ff41] transition-colors">data_object</span>
+          <a href="https://ziii.my.id/cms/login" target="_blank" rel="noopener noreferrer" className="material-symbols-outlined text-[18px] cursor-pointer hover:text-[#00ff41] transition-colors">terminal</a>
+          <a href="https://github.com/ardiansyah1506" target="_blank" rel="noopener noreferrer" className="material-symbols-outlined text-[18px] cursor-pointer hover:text-[#00ff41] transition-colors">data_object</a>
         </div>
       </div>
     </footer>
