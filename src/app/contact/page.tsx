@@ -27,15 +27,42 @@ export default function Contact() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setBtnText("[ MESSAGE_DISPATCHED ]");
-    setBtnClasses("bg-[#00ff41] text-[#121415] border-[#00ff41]");
-    setTimeout(() => {
-      e.currentTarget.reset();
-      setBtnText("[ INITIATE_TRANSMISSION ]");
-      setBtnClasses("");
-    }, 3000);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    setBtnText("[ TRANSMITTING... ]");
+    setBtnClasses("bg-[#00ff41]/50 text-[#121415] border-[#00ff41]");
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/fauziardiansyah302@gmail.com", {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json'
+        },
+        body: formData
+      });
+
+      if (response.ok) {
+        setBtnText("[ MESSAGE_DISPATCHED ]");
+        setBtnClasses("bg-[#00ff41] text-[#121415] border-[#00ff41]");
+        setTimeout(() => {
+          form.reset();
+          setBtnText("[ INITIATE_TRANSMISSION ]");
+          setBtnClasses("");
+        }, 3000);
+      } else {
+        throw new Error("Transmission failed");
+      }
+    } catch (error) {
+       setBtnText("[ TRANSMISSION_FAILED ]");
+       setBtnClasses("bg-red-500 text-white border-red-500");
+       setTimeout(() => {
+          setBtnText("[ INITIATE_TRANSMISSION ]");
+          setBtnClasses("");
+       }, 3000);
+    }
   };
 
   return (
@@ -77,17 +104,17 @@ export default function Contact() {
             <div className="flex flex-col md:flex-row gap-gutter">
               <div className="w-full flex flex-col gap-stack-sm group">
                 <label className="font-metadata text-metadata text-on-surface-variant uppercase group-focus-within:text-[#00ff41] transition-colors">Identification [Name]</label>
-                <input className="w-full bg-transparent border-b border-outline-variant py-stack-sm font-code-snippet text-code-snippet text-on-surface focus:outline-none focus:border-[#00ff41] transition-colors placeholder:text-on-surface-variant/50" placeholder="John Doe" required type="text" />
+                <input name="name" className="w-full bg-transparent border-b border-outline-variant py-stack-sm font-code-snippet text-code-snippet text-on-surface focus:outline-none focus:border-[#00ff41] transition-colors placeholder:text-on-surface-variant/50" placeholder="John Doe" required type="text" />
               </div>
               <div className="w-full flex flex-col gap-stack-sm group">
                 <label className="font-metadata text-metadata text-on-surface-variant uppercase group-focus-within:text-[#00ff41] transition-colors">Return Address [Email]</label>
-                <input className="w-full bg-transparent border-b border-outline-variant py-stack-sm font-code-snippet text-code-snippet text-on-surface focus:outline-none focus:border-[#00ff41] transition-colors placeholder:text-on-surface-variant/50" placeholder="john@domain.tld" required type="email" />
+                <input name="email" className="w-full bg-transparent border-b border-outline-variant py-stack-sm font-code-snippet text-code-snippet text-on-surface focus:outline-none focus:border-[#00ff41] transition-colors placeholder:text-on-surface-variant/50" placeholder="john@domain.tld" required type="email" />
               </div>
             </div>
             
             <div className="w-full flex flex-col gap-stack-sm group">
               <label className="font-metadata text-metadata text-on-surface-variant uppercase group-focus-within:text-[#00ff41] transition-colors">Payload [Message]</label>
-              <textarea className="w-full bg-transparent border-b border-outline-variant py-stack-sm font-code-snippet text-code-snippet text-on-surface focus:outline-none focus:border-[#00ff41] transition-colors placeholder:text-on-surface-variant/50 resize-none" placeholder="Describe the system requirements..." required rows={4}></textarea>
+              <textarea name="message" className="w-full bg-transparent border-b border-outline-variant py-stack-sm font-code-snippet text-code-snippet text-on-surface focus:outline-none focus:border-[#00ff41] transition-colors placeholder:text-on-surface-variant/50 resize-none" placeholder="Describe the system requirements..." required rows={4}></textarea>
             </div>
             
             <div className="flex justify-between items-end mt-stack-md">
@@ -108,11 +135,11 @@ export default function Contact() {
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-unit">
           {[
-            { id: 1, label: "Email", icon: "mail", text: "hello@fauzi.dev" },
-            { id: 2, label: "GitHub", icon: "code", text: "github.com/fauzi-a" },
-            { id: 3, label: "LinkedIn", icon: "work", text: "linkedin.com/in/fauzi" }
+            { id: 1, label: "Email", icon: "mail", text: "fauziardiansyah302@gmail.com", href: "mailto:fauziardiansyah302@gmail.com" },
+            { id: 2, label: "GitHub", icon: "code", text: "github.com/ardiansyah1506", href: "https://github.com/ardiansyah1506" },
+            { id: 3, label: "LinkedIn", icon: "work", text: "linkedin.com/in/fauziardiansyah", href: "https://linkedin.com/in/fauziardiansyah" }
           ].map(it => (
-            <motion.a key={it.id} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="group border border-outline-variant bg-surface p-stack-md flex flex-col justify-between h-32 hover:border-[#00ff41] transition-colors" href="#">
+            <motion.a key={it.id} variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} target={it.id !== 1 ? "_blank" : undefined} rel="noopener noreferrer" className="group border border-outline-variant bg-surface p-stack-md flex flex-col justify-between h-32 hover:border-[#00ff41] transition-colors" href={it.href}>
               <div className="flex justify-between items-start">
                 <span className="font-metadata text-metadata text-on-surface-variant uppercase group-hover:text-[#00ff41] transition-colors">{it.label}</span>
                 <span className="material-symbols-outlined text-on-surface-variant group-hover:text-[#00ff41] text-[18px] transition-colors">{it.icon}</span>
