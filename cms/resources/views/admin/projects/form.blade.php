@@ -87,7 +87,7 @@
                 <label for="image" class="block font-medium text-sm text-gray-700 mb-3">Project Cover Image</label>
                 @if($project->exists && $project->image)
                     <div class="mb-4 inline-block relative rounded-lg overflow-hidden border border-gray-200">
-                        <img src="{{ Str::startsWith($project->image, 'http') ? env('APP_URL') . '/api' . $project->image : $project->image }}" alt="Current Image" class="h-32 object-cover">
+                        <img src="{{ !Str::startsWith($project->image, 'http') ? env('APP_URL') . '/api' . $project->image : $project->image }}" alt="Current Image" class="h-32 object-cover">
                     </div>
                 @endif
                 <input id="image" type="file" name="image" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 transition-all" {{ $project->exists ? '' : 'required' }} />
