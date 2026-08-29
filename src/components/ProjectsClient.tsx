@@ -87,7 +87,7 @@ export default function ProjectsClient({ initialProjects }: { initialProjects: a
                   {project.image ? (
                     <div 
                       className={`absolute inset-0 bg-cover bg-center transition-all duration-500 group-hover:scale-105 ${idx === 1 ? "grayscale group-hover:grayscale-0" : ""}`} 
-                      style={{ backgroundImage: `url('${!project.image.startsWith("http") ? (process.env.NEXT_PUBLIC_API_URL + project.image) : project.image}')` }}
+                      style={{ backgroundImage: `url('${project.image?.startsWith("http") ? project.image : (process.env.NEXT_PUBLIC_API_URL + project.image)}')` }}
                     ></div>
                   ) : (
                     <div className="absolute inset-0 bg-outline-variant/10 flex items-center justify-center opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">

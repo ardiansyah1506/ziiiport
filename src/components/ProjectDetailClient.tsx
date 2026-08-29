@@ -53,7 +53,7 @@ export default function ProjectDetailClient({ project }: { project: any }) {
               <div className="relative w-full aspect-[16/9] md:aspect-[21/10] overflow-hidden group bg-surface-dim">
                  {/* eslint-disable-next-line @next/next/no-img-element */}
                  <img 
-                    src={!project.image?.startsWith("http") ? `${process.env.NEXT_PUBLIC_API_URL}${project.image}` : project.image} 
+                    src={project.image?.startsWith("http") ? project.image : `${process.env.NEXT_PUBLIC_API_URL}${project.image}`}
                     alt={`Preview of ${project.title}`} 
                     className="w-full h-full object-cover object-top transition-transform duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.03]"
                  />
