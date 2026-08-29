@@ -266,10 +266,11 @@ export default function HomeClient({ initialProjects }: { initialProjects: any[]
             </p>
           </div>
           <div className="relative z-10 flex-shrink-0 w-full md:w-[350px] flex flex-col gap-4 mt-stack-md md:mt-0">
-            <a 
+                 <a 
               href="mailto:ardiansyah1506@gmail.com" 
-              className="inline-flex items-center justify-between text-on-surface hover:text-on-primary border border-outline-variant hover:border-[#00ff41] hover:bg-[#00ff41] bg-surface-container-lowest px-6 py-4 uppercase font-metadata text-metadata transition-all group"
-            >
+              target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-between text-on-surface hover:text-[#00ff41] border border-outline-variant hover:border-[#00ff41] bg-surface-container-lowest px-6 py-4 uppercase font-metadata text-metadata transition-all"
+            ></a>
               <div className="flex items-center gap-3 group-hover:text-[#121415]">
                  <span className="material-symbols-outlined text-[20px]">mail</span>
                  Email Me
