@@ -29,8 +29,9 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+    const formElement = e.target as HTMLFormElement;
+    const formData = new FormData(formElement);
+    const data = Object.fromEntries(formData.entries());
 
     setBtnText("[ TRANSMITTING... ]");
     setBtnClasses("bg-[#00ff41]/50 text-[#121415] border-[#00ff41]");
@@ -39,16 +40,17 @@ export default function Contact() {
       const response = await fetch("https://formsubmit.co/ajax/fauziardiansyah302@gmail.com", {
         method: "POST",
         headers: {
+            'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
-        body: formData
+        body: JSON.stringify(data)
       });
 
       if (response.ok) {
         setBtnText("[ MESSAGE_DISPATCHED ]");
         setBtnClasses("bg-[#00ff41] text-[#121415] border-[#00ff41]");
         setTimeout(() => {
-          form.reset();
+          if (formElement) formElement.reset();
           setBtnText("[ INITIATE_TRANSMISSION ]");
           setBtnClasses("");
         }, 3000);
