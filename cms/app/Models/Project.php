@@ -27,4 +27,16 @@ class Project extends Model
         'categories' => 'array',
     ];
 
+    public function getImageAttribute($value)
+    {
+        if ($value && !\Illuminate\Support\Str::startsWith($value, 'http')) {
+            // Kita prepend /api agar matching dengan Nginx block di server Anda
+            if (\Illuminate\Support\Str::startsWith($value, '/storage/')) {
+                $value = '/api' . $value;
+            }
+            return asset($value);
+        }
+        return $value;
+    }
+
 }
