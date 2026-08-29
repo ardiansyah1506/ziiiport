@@ -30,6 +30,10 @@ class Project extends Model
     public function getImageAttribute($value)
     {
         if ($value && !\Illuminate\Support\Str::startsWith($value, 'http')) {
+            // Nginx limits storage access over /api/storage/ explicitly.
+            if (\Illuminate\Support\Str::startsWith($value, '/storage/')) {
+                $value = '/api' . $value;
+            }
             return asset($value);
         }
         return $value;
