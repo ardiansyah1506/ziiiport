@@ -45,6 +45,8 @@ class ProjectController extends Controller
             $validated['image'] = '/storage/' . $path;
         }
 
+        $validated['is_featured'] = $request->has('is_featured');
+
         Project::create($validated);
 
         return redirect()->route('admin.projects.index')->with('success', 'Project created successfully.');
@@ -77,6 +79,8 @@ class ProjectController extends Controller
             $path = $request->file('image')->store('projects', 'public');
             $validated['image'] = '/storage/' . $path;
         }
+
+        $validated['is_featured'] = $request->has('is_featured');
 
         $project->update($validated);
 

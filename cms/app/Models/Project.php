@@ -20,11 +20,13 @@ class Project extends Model
         'image',
         'liveDemo',
         'github',
+        'is_featured',
     ];
 
     protected $casts = [
         'tech' => 'array',
         'categories' => 'array',
+        'is_featured' => 'boolean',
     ];
 
     public function getImageAttribute($value)

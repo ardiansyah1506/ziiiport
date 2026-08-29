@@ -82,6 +82,12 @@
                 </div>
             </div>
 
+            <!-- Featured Checkbox -->
+            <div class="mt-4 flex items-center">
+                <input id="is_featured" type="checkbox" name="is_featured" value="1" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" {{ old('is_featured', $project->is_featured) ? 'checked' : '' }} />
+                <label for="is_featured" class="ml-2 block font-medium text-sm text-gray-700">Display this project on the home page (Featured)</label>
+            </div>
+
             <!-- Image -->
             <div class="mt-4 pt-4 border-t border-gray-100">
                 <label for="image" class="block font-medium text-sm text-gray-700 mb-3">Project Cover Image</label>
