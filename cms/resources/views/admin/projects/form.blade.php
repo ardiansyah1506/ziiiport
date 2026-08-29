@@ -1,105 +1,107 @@
 <x-admin-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-2xl text-gray-800 leading-tight">
             {{ $project->exists ? 'Edit Project' : 'Create Project' }}
         </h2>
     </x-slot>
 
-    <div class="px-4 sm:px-6 lg:px-8">
-        <div class="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg p-6">
-            
-            @if ($errors->any())
-                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
-                    <ul class="list-disc pl-5">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+    <div class="bg-white shadow-sm rounded-xl border border-gray-100 p-6 md:p-8">
+        
+        @if ($errors->any())
+            <div class="bg-red-50 border-l-4 border-red-500 text-red-700 p-4 rounded-md shadow-sm mb-6">
+                <ul class="list-disc pl-5 text-sm font-medium">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <form action="{{ $project->exists ? route('admin.projects.update', $project) : route('admin.projects.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
+            @csrf
+            @if($project->exists)
+                @method('PUT')
             @endif
 
-            <form action="{{ $project->exists ? route('admin.projects.update', $project) : route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                @if($project->exists)
-                    @method('PUT')
-                @endif
-
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Title -->
-                <div class="mb-4">
-                    <label for="title" class="block font-medium text-gray-700 dark:text-gray-300 mb-1">Title</label>
-                    <input id="title" class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 bg-white border rounded-md shadow-sm p-2" type="text" name="title" value="{{ old('title', $project->title) }}" required autofocus />
+                <div>
+                    <label for="title" class="block font-medium text-sm text-gray-700 mb-2">Title</label>
+                    <input id="title" class="w-full border border-gray-200 bg-gray-50 focus:bg-white rounded-lg shadow-sm px-4 py-2 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all font-medium text-gray-900" type="text" name="title" value="{{ old('title', $project->title) }}" required autofocus />
                 </div>
 
                 <!-- Slug -->
-                <div class="mb-4">
-                    <label for="slug" class="block font-medium text-gray-700 dark:text-gray-300 mb-1">Slug</label>
-                    <input id="slug" class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 bg-white border rounded-md shadow-sm p-2" type="text" name="slug" value="{{ old('slug', $project->slug) }}" required />
-                    <p class="text-sm text-gray-500 mt-1">Must be unique (e.g., nexus-analytics-platform)</p>
+                <div>
+                    <label for="slug" class="block font-medium text-sm text-gray-700 mb-2">Slug</label>
+                    <input id="slug" class="w-full border border-gray-200 bg-gray-50 focus:bg-white rounded-lg shadow-sm px-4 py-2 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all font-medium text-gray-900" type="text" name="slug" value="{{ old('slug', $project->slug) }}" required />
+                    <p class="text-xs text-gray-500 mt-1">Must be unique (e.g., nexus-analytics-platform)</p>
                 </div>
 
                 <!-- Role -->
-                <div class="mb-4">
-                    <label for="role" class="block font-medium text-gray-700 dark:text-gray-300 mb-1">Role</label>
-                    <input id="role" class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 bg-white border rounded-md shadow-sm p-2" type="text" name="role" value="{{ old('role', $project->role) }}" required />
+                <div>
+                    <label for="role" class="block font-medium text-sm text-gray-700 mb-2">Role</label>
+                    <input id="role" class="w-full border border-gray-200 bg-gray-50 focus:bg-white rounded-lg shadow-sm px-4 py-2 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all font-medium text-gray-900" type="text" name="role" value="{{ old('role', $project->role) }}" required />
                 </div>
 
                 <!-- Timeline -->
-                <div class="mb-4">
-                    <label for="timeline" class="block font-medium text-gray-700 dark:text-gray-300 mb-1">Timeline</label>
-                    <input id="timeline" class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 bg-white border rounded-md shadow-sm p-2" type="text" name="timeline" value="{{ old('timeline', $project->timeline) }}" required />
+                <div>
+                    <label for="timeline" class="block font-medium text-sm text-gray-700 mb-2">Timeline</label>
+                    <input id="timeline" class="w-full border border-gray-200 bg-gray-50 focus:bg-white rounded-lg shadow-sm px-4 py-2 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all font-medium text-gray-900" type="text" name="timeline" value="{{ old('timeline', $project->timeline) }}" required />
                 </div>
+            </div>
 
-                <!-- Description -->
-                <div class="mb-4">
-                    <label for="description" class="block font-medium text-gray-700 dark:text-gray-300 mb-1">Description</label>
-                    <textarea id="description" name="description" class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 bg-white border rounded-md shadow-sm p-2" rows="5" required>{{ old('description', $project->description) }}</textarea>
-                </div>
+            <!-- Description -->
+            <div>
+                <label for="description" class="block font-medium text-sm text-gray-700 mb-2">Description</label>
+                <textarea id="description" name="description" class="w-full border border-gray-200 bg-gray-50 focus:bg-white rounded-lg shadow-sm px-4 py-3 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all font-medium text-gray-900" rows="5" required>{{ old('description', $project->description) }}</textarea>
+            </div>
 
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Tech -->
-                <div class="mb-4">
-                    <label for="tech" class="block font-medium text-gray-700 dark:text-gray-300 mb-1">Tech Stack (Comma Separated)</label>
-                    <input id="tech" class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 bg-white border rounded-md shadow-sm p-2" type="text" name="tech" value="{{ old('tech', $project->tech ? implode(', ', $project->tech) : '') }}" required placeholder="e.g. Next.js, Tailwind, SQLite" />
+                <div>
+                    <label for="tech" class="block font-medium text-sm text-gray-700 mb-2">Tech Stack (Comma Separated)</label>
+                    <input id="tech" class="w-full border border-gray-200 bg-gray-50 focus:bg-white rounded-lg shadow-sm px-4 py-2 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all font-medium text-gray-900" type="text" name="tech" value="{{ old('tech', $project->tech ? implode(', ', $project->tech) : '') }}" required placeholder="e.g. Next.js, Tailwind, SQLite" />
                 </div>
 
                 <!-- Categories -->
-                <div class="mb-4">
-                    <label for="categories" class="block font-medium text-gray-700 dark:text-gray-300 mb-1">Categories (Comma Separated)</label>
-                    <input id="categories" class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 bg-white border rounded-md shadow-sm p-2" type="text" name="categories" value="{{ old('categories', $project->categories ? implode(', ', $project->categories) : '') }}" placeholder="e.g. Web App, AI" />
-                </div>
-
-                <!-- Image -->
-                <div class="mb-4">
-                    <label for="image" class="block font-medium text-gray-700 dark:text-gray-300 mb-1">Image Upload</label>
-                    @if($project->exists && $project->image)
-                        <div class="mb-2">
-                            <img src="{{ Str::startsWith($project->image, 'http') ? $project->image : 'http://127.0.0.1:8000' . $project->image }}" alt="Current Image" class="h-32 object-cover rounded shadow">
-                        </div>
-                    @endif
-                    <input id="image" type="file" name="image" class="w-full text-gray-700 dark:text-gray-300 mt-2" {{ $project->exists ? '' : 'required' }} />
+                <div>
+                    <label for="categories" class="block font-medium text-sm text-gray-700 mb-2">Categories (Comma Separated)</label>
+                    <input id="categories" class="w-full border border-gray-200 bg-gray-50 focus:bg-white rounded-lg shadow-sm px-4 py-2 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all font-medium text-gray-900" type="text" name="categories" value="{{ old('categories', $project->categories ? implode(', ', $project->categories) : '') }}" placeholder="e.g. Web App, AI" />
                 </div>
 
                 <!-- Live Demo -->
-                <div class="mb-4">
-                    <label for="liveDemo" class="block font-medium text-gray-700 dark:text-gray-300 mb-1">Live Demo URL</label>
-                    <input id="liveDemo" class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 bg-white border rounded-md shadow-sm p-2" type="url" name="liveDemo" value="{{ old('liveDemo', $project->liveDemo) }}" />
+                <div>
+                    <label for="liveDemo" class="block font-medium text-sm text-gray-700 mb-2">Live Demo URL (use # if none)</label>
+                    <input id="liveDemo" class="w-full border border-gray-200 bg-gray-50 focus:bg-white rounded-lg shadow-sm px-4 py-2 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all font-medium text-gray-900" type="text" name="liveDemo" value="{{ old('liveDemo', $project->liveDemo) }}" />
                 </div>
 
                 <!-- Github -->
-                <div class="mb-4">
-                    <label for="github" class="block font-medium text-gray-700 dark:text-gray-300 mb-1">GitHub URL</label>
-                    <input id="github" class="w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 bg-white border rounded-md shadow-sm p-2" type="url" name="github" value="{{ old('github', $project->github) }}" />
+                <div>
+                    <label for="github" class="block font-medium text-sm text-gray-700 mb-2">GitHub URL (use # if none)</label>
+                    <input id="github" class="w-full border border-gray-200 bg-gray-50 focus:bg-white rounded-lg shadow-sm px-4 py-2 focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all font-medium text-gray-900" type="text" name="github" value="{{ old('github', $project->github) }}" />
                 </div>
+            </div>
 
-                <div class="flex items-center justify-end mt-6">
-                    <a href="{{ route('admin.projects.index') }}" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 transition mr-4 shadow-sm">
-                        Cancel
-                    </a>
-                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-sm font-semibold">
-                        Save Project
-                    </button>
-                </div>
-            </form>
+            <!-- Image -->
+            <div class="mt-4 pt-4 border-t border-gray-100">
+                <label for="image" class="block font-medium text-sm text-gray-700 mb-3">Project Cover Image</label>
+                @if($project->exists && $project->image)
+                    <div class="mb-4 inline-block relative rounded-lg overflow-hidden border border-gray-200">
+                        <img src="{{ Str::startsWith($project->image, 'http') ? $project->image : 'http://127.0.0.1:8000' . $project->image }}" alt="Current Image" class="h-32 object-cover">
+                    </div>
+                @endif
+                <input id="image" type="file" name="image" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 transition-all" {{ $project->exists ? '' : 'required' }} />
+            </div>
 
-        </div>
+            <div class="flex items-center justify-end mt-8 pt-6 border-t border-gray-100">
+                <a href="{{ route('admin.projects.index') }}" class="px-5 py-2.5 text-gray-600 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors mr-4 font-medium text-sm shadow-sm">
+                    Cancel
+                </a>
+                <button type="submit" class="px-5 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors shadow-sm font-medium text-sm">
+                    Save Project
+                </button>
+            </div>
+        </form>
+
     </div>
 </x-admin-layout>

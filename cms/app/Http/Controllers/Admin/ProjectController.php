@@ -33,8 +33,8 @@ class ProjectController extends Controller
             'tech' => 'required|string',
             'categories' => 'nullable|string',
             'image' => 'required|image|max:2048',
-            'liveDemo' => 'nullable|url',
-            'github' => 'nullable|url',
+            'liveDemo' => 'nullable|string',
+            'github' => 'nullable|string',
         ]);
 
         $validated['tech'] = array_map('trim', explode(',', $validated['tech']));
@@ -66,8 +66,8 @@ class ProjectController extends Controller
             'tech' => 'required|string',
             'categories' => 'nullable|string',
             'image' => 'nullable|image|max:2048',
-            'liveDemo' => 'nullable|url',
-            'github' => 'nullable|url',
+            'liveDemo' => 'nullable|string',
+            'github' => 'nullable|string',
         ]);
 
         $validated['tech'] = array_map('trim', explode(',', $validated['tech']));

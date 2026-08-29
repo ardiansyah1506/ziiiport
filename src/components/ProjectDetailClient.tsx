@@ -118,12 +118,12 @@ export default function ProjectDetailClient({ project }: { project: any }) {
               </motion.div>
 
               <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-end gap-4 mt-4 pt-8 border-t border-border-subtle w-full">
-                 {project.liveDemo && (
+                 {(project.liveDemo && project.liveDemo !== '#') && (
                     <a target="_blank" rel="noopener noreferrer" href={project.liveDemo} className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-primary text-on-primary hover:bg-primary/90 hover:scale-[1.03] active:scale-95 uppercase font-metadata text-metadata transition-all gap-2 shadow-lg shadow-primary/20">
                        Live Demo <span className="material-symbols-outlined text-[20px]">play_circle</span>
                     </a>
                  )}
-                 {project.github && (
+                 {(project.github && project.github !== '#') && (
                     <a target="_blank" rel="noopener noreferrer" href={project.github} className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border-2 border-outline-variant/50 text-on-surface focus:outline-none hover:border-primary hover:text-primary hover:bg-primary/5 active:scale-95 uppercase font-metadata text-metadata transition-all gap-2">
                        View Code <span className="material-symbols-outlined text-[20px]">code</span>
                     </a>
